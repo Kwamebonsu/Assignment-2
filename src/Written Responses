@@ -1,0 +1,11 @@
+1
+a) True
+b) True
+c) False
+d) True
+e) False
+f) True
+g) True
+
+2
+They would behave the same way. In both cases, karel would turn right if he was able to pick up the things and would turn left if he was unable.
