@@ -21,38 +21,20 @@ public class A2Q3 {
         City kitchener = new City();
 
         // create a robot
-        Robot karel = new Robot(kitchener, -4, 3, Direction.WEST);
+        Robot karel = new Robot(kitchener, 4, 3, Direction.WEST);
 
         while (true) {
             //if avenue<0, face south, move
-            if (karel.getAvenue() < 0) {
-                while (karel.getDirection() == Direction.WEST) {
-                    karel.turnLeft();
-                }
-                while (karel.getDirection() == Direction.NORTH) {
-                    karel.turnLeft();
-                    karel.turnLeft();
-                }
-                while (karel.getDirection() == Direction.EAST) {
-                    karel.turnLeft();
-                    karel.turnLeft();
+            if (karel.getAvenue() > 0) {
+                while (karel.getDirection() != Direction.SOUTH) {
                     karel.turnLeft();
                 }
                 karel.move();
             }
             //if avenue>0, face north, move
 
-            else if (karel.getAvenue() > 0) {
-                while (karel.getDirection() == Direction.EAST) {
-                    karel.turnLeft();
-                }
-                while (karel.getDirection() == Direction.SOUTH) {
-                    karel.turnLeft();
-                    karel.turnLeft();
-                }
-                while (karel.getDirection() == Direction.WEST) {
-                    karel.turnLeft();
-                    karel.turnLeft();
+            else if (karel.getAvenue() < 0) {
+                while (karel.getDirection() != Direction.NORTH) {
                     karel.turnLeft();
                 }
                 karel.move();
