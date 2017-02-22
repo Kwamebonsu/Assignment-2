@@ -141,31 +141,35 @@ public class Challenge {
                     karel.putThing();
                 }
                 }
-            if(karel.frontIsClear()){
+            while(karel.frontIsClear()){
                 karel.move();
                 karel.turnLeft();
             }
-            else if(!karel.frontIsClear()){
+            if (!karel.frontIsClear()){
                 karel.turnLeft();
                 karel.turnLeft();
                 karel.turnLeft();
-                if(!karel.frontIsClear()){
-                    break;
+            }
+            if(karel.getStreet()==9){
+                while(karel.countThingsInBackpack()>0){
+                    karel.putThing();
                 }
-                karel.move();
-                }
+                break;
+            }
         }
         while (true){
-            tina.frontIsClear();
+            if(tina.frontIsClear()){
             while(tina.canPickThing()){
                 tina.pickThing();
             }
             tina.move();
-            while(!tina.frontIsClear()){
-                tina.putThing();
             }
+            if(tina.getStreet()==9){
+                while(tina.countThingsInBackpack()>0){
+                    tina.putThing();
+                }
+                break;
             }
-            
         }
     }
-    
+}
