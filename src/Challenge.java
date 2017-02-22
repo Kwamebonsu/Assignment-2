@@ -131,41 +131,41 @@ public class Challenge {
         //new robot
         Robot karel = new Robot(kitchener, 0, 2, Direction.SOUTH);
         Robot tina = new Robot(kitchener, 0, 2, Direction.SOUTH);
-        
-        while(true){
-                while(karel.canPickThing()){
-                    karel.pickThing();
-                }
-                if(karel.getAvenue()==2){
-                while (karel.countThingsInBackpack()>0){
+
+        while (true) {
+            while (karel.canPickThing()) {
+                karel.pickThing();
+            }
+            if (karel.getAvenue() == 2) {
+                while (karel.countThingsInBackpack() > 0) {
                     karel.putThing();
                 }
-                }
-            while(karel.frontIsClear()){
+            }
+            while (karel.frontIsClear()) {
                 karel.move();
                 karel.turnLeft();
             }
-            if (!karel.frontIsClear()){
+            if (!karel.frontIsClear()) {
                 karel.turnLeft();
                 karel.turnLeft();
                 karel.turnLeft();
             }
-            if(karel.getStreet()==9){
-                while(karel.countThingsInBackpack()>0){
+            if (karel.getStreet() == 9) {
+                while (karel.countThingsInBackpack() > 0) {
                     karel.putThing();
                 }
                 break;
             }
         }
-        while (true){
-            if(tina.frontIsClear()){
-            while(tina.canPickThing()){
-                tina.pickThing();
+        while (true) {
+            if (tina.frontIsClear()) {
+                while (tina.canPickThing()) {
+                    tina.pickThing();
+                }
+                tina.move();
             }
-            tina.move();
-            }
-            if(tina.getStreet()==9){
-                while(tina.countThingsInBackpack()>0){
+            if (tina.getStreet() == 9) {
+                while (tina.countThingsInBackpack() > 0) {
                     tina.putThing();
                 }
                 break;
