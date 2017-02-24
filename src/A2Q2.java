@@ -37,8 +37,10 @@ public class A2Q2 {
 
         Robot karel = new Robot(kitchener, 3, 0, Direction.EAST);
         while (true) {
+            //move until karel encounters an hurdle
             karel.frontIsClear();
             karel.move();
+            //jump over hurdle
             if (!karel.frontIsClear()) {
                 karel.turnLeft();
                 karel.move();
@@ -53,7 +55,7 @@ public class A2Q2 {
                 karel.turnLeft();
             }
 
-
+            //stop moving until karel encounters a thing
             if (karel.canPickThing()) {
                 break;
             }

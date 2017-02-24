@@ -53,6 +53,7 @@ public class A2Q4 {
         new Wall(kitchener, 3, 2, Direction.WEST);
         new Wall(kitchener, 3, 3, Direction.EAST);
 
+        //create a robot
         Robot karel = new Robot(kitchener, 0, 1, Direction.EAST);
         while (true) {
             //check if the right side is clear

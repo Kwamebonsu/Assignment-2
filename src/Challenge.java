@@ -131,7 +131,9 @@ public class Challenge {
         //new robot
         Robot karel = new Robot(kitchener, 0, 2, Direction.SOUTH);
         Robot tina = new Robot(kitchener, 0, 2, Direction.SOUTH);
-
+        //if karel can move into a driveway, move into the driveway an pick up all the things
+        //place all the things in avenue 2
+        //stop the loop once karel reaches avenue 9
         while (true) {
             while (karel.canPickThing()) {
                 karel.pickThing();
@@ -157,6 +159,7 @@ public class Challenge {
                 break;
             }
         }
+        //make tina pick up all the things on the sidewalk and move them to the end
         while (true) {
             if (tina.frontIsClear()) {
                 while (tina.canPickThing()) {

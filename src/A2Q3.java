@@ -22,7 +22,7 @@ public class A2Q3 {
         Robot karel = new Robot(kitchener, -4, 4, Direction.WEST);
 
         while (true) {
-            //if avenue>0, face north
+            //if karel is not on street 0, move to street 0
 
             while (karel.getStreet() > 0) {
 
@@ -42,6 +42,7 @@ public class A2Q3 {
             }
 
 
+
             while (karel.getStreet() < 0) {
 
                 while (karel.getDirection() != Direction.SOUTH) {
@@ -57,6 +58,7 @@ public class A2Q3 {
                 }
 
             }
+            //if karel is not on avenue 0, move to avenue 0
             while (karel.getAvenue() > 0) {
 
                 while (karel.getDirection() != Direction.WEST) {

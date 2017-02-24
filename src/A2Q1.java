@@ -35,17 +35,18 @@ public class A2Q1 {
 
         //create robot
         Robot karel = new Robot(kitchener, 1, 1, Direction.EAST);
-
+        //move and pick up things
         while (true) {
             karel.frontIsClear();
             karel.move();
             karel.canPickThing();
             karel.pickThing();
-
+            //stop picking up things once karel has 7 things in his backpack
             if (karel.countThingsInBackpack() >= 7) {
                 break;
             }
         }
+        //continue to move until karel cannot pick up things
         while (true) {
             karel.canPickThing();
             karel.move();
